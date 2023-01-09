@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import tweepy
-from temp import download_temp_media
+from flask_project.temp import download_temp_media
 import tempfile
 
 # auth = tweepy.OAuth2BearerHandler(os.getenv("BEARER_TOKEN"))
