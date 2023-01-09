@@ -1,5 +1,4 @@
 import os
-import uuid
 import tempfile
 import tweepy
 from dotenv import load_dotenv
@@ -48,7 +47,6 @@ def upload_repost_dm(api: tweepy.API):
                         tweet_media_ids = []
                         for file in media_files:
                             # make random file name
-                            # filename = str(uuid.uuid4())
                             response = api.media_upload(filename=file.name)
                             tweet_media_ids.append(response.media_id)
                             file.close()
@@ -110,7 +108,7 @@ def createTwitterApiConnection(consumer_key, consumer_secret, access_token, acce
 
 
 if __name__ == "__main__":
-    load_dotenv("./.env")
+    load_dotenv("../.env")
     twitter_id = int(os.getenv("TWITTER_ID"))
 
     BEARER_TOKEN = os.getenv("BEARER_TOKEN")
